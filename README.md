@@ -19,9 +19,9 @@ awk '{print ">"$1;print $2}' $ref'.txt' > $ref'.fa' module load Bowtie2 bowtie2-
 #step 3: count reads perfect match to 20nt gRNA ref and summarized count table grep 20M B7_C2_0_extracted.sam|awk '{print $3}' |sort|uniq -c |awk '{print $1,"\t",$2}'> *_count.txt
 
 # running on hpc suncluster
-#cwd: crispr root folder folder #root folder structure: contains 
+#cwd: crispr root folder folder #root folder structure: contains  
 fqfiles ---- where raw fastq files store  
-bowtie_index ---- gRNA lib bowtie index files 
+Ref ---- gRNA lib files in txt format: 1st column is sgRNA id(sg_mIkzf1_1460_a); 2nd column is 20mer sequence  
 
 EXAMPLE: 
 
